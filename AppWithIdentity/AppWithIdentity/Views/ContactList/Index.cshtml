@@ -5,3 +5,46 @@
 }
 
 <h1>This is a private page</h1>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            @if (User.IsInRole("admin"))
+            {
+            <td>Actions</td>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Contact 1</td>
+            <td>contact1@accountsapp.com</td>
+            <td>122334343</td>
+            @if (User.IsInRole("admin"))
+            {
+            <td>
+                <a asp-controller="ContactList" asp-action="Edit">Edit</a>
+                <span>&nbsp; | &nbsp;</span>
+                <a asp-controller="ContactList" asp-action="Delete">Delete</a>
+                    
+            </td>
+            }
+            </tr>
+        <tr>
+            <td>Contact 2</td>
+            <td>contact2@accountsapp.com</td>
+            <td>45345345343</td>
+            @if (User.IsInRole("admin"))
+            {
+            <td>
+                <a asp-controller="ContactList" asp-action="Edit">Edit</a>
+                <span>&nbsp; | &nbsp;</span>
+                <a asp-controller="ContactList" asp-action="Delete">Delete</a>
+                    
+            </td>
+            }
+            </tr>
+    </tbody>
+</table>
